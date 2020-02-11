@@ -1,0 +1,30 @@
+{% assign gallery = 'galeria_1' %}
+<!-- defina acima a galeria que deve ser mostrada no carrossel -->
+<section class="page" id="carousel">
+  <div class="container">
+    <header>
+      <h1 class="page-title">Carrossel com Parallax e Lightbox de Galeria</h1>
+      <h2 class="page-subtitle">Exibição de logomarcas ou produtos, destaque para o Fundo que se movimenta usando o efeito parallax e lightbox de galeria automática</h2>
+    </header> 
+    <div class="content">
+      <div class="row">
+        <div class="topbrands-carousel owl-carousel">
+          {% for file in site.static_files %}
+            {% if file.path contains gallery %}
+              {% if file.path contains "thumbs"  %}
+              {% else %}
+              <div class="carousel_img">
+                <a name="{{site.gallery.dir}}/{{gallery}}/{{ file.name }}"></a>
+                <a href="{{site.gallery.dir}}/{{gallery}}/{{ file.name }}" rel="lightbox[{{ gallery }}]">
+                    <img class="" alt="file.name" src="{{site.gallery.dir}}/{{gallery}}/thumbs/{{ file.name }}" />
+                </a>
+              </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+---
+page_title: Notícias
+description:
+layout: page
+class: noticias
+sitemap: true
+---
+
+<section class="page" id="ultimas-noticias">
+  <div class="container">
+    <header>
+      <h1 class="page-title">Notícias</h1>
+      <h2 class="page-subtitle">Exibição das notícias cadastradas no site</h2>
+    </header>
+    <div class="content"> 
+        <div class="row">
+            {% for post in site.posts %}
+            <div class="col-md-4 noticebox">
+                <div class="card h-100">
+                    <div class="maxthumb">
+                        <a href="{{ site.baseurl }}{{ post.url }}">
+                            {% if post.image %} <img class="img-fluid" src="{% if post.image contains " :" %}{{
+                                post.image }}{% else %}{{ post.image | absolute_url }}{% endif %}" alt="{{ post.title }}">
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title"><a class="text-dark" href="{{ site.baseurl }}{{ post.url }}">{{
+                                post.title }}</a></h2>
+                        <h4 class="card-text">{{ post.excerpt | strip_html | truncatewords:30 }}</h4>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+  </div>
+</section>

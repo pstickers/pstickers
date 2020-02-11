@@ -1,0 +1,17 @@
+#footer {
+  //background-color: $primary
+  background: linear-gradient(45deg, #482cbf 0%, #6ac6f0 100%);
+  color: #FFF;
+  padding: 40px 0;
+
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .copy {
+      
+    }
+  }
+}

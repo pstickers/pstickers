@@ -1,0 +1,35 @@
+@import 
+  'font-awesome/fontawesome', 
+  'font-awesome/fa-solid',
+  'font-awesome/fa-regular',
+  'font-awesome/fa-brands';
+
+@import 
+  'libs/normalize',
+  'libs/bootstrap.min',
+  'libs/owl.carousel.min',
+  'variables',
+  'defaults';
+
+@import 
+  'blocks/slide',
+  'blocks/page';
+
+@import 
+ 'pages/carousel', 
+ 'pages/contact', 
+ 'pages/modal',
+ 'pages/photosevideos',
+ 'pages/noticefull',
+ 'pages/latest_posts',
+ 'pages/offers',
+ 'pages/cards',
+ 'pages/numbers',
+ 'pages/testimonials',
+ 'pages/tabs';
+
+@import 
+  'helper',
+  'header',
+  'footer',
+  'responsive';

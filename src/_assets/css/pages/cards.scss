@@ -1,0 +1,122 @@
+#cards {
+  background: #efefef;
+
+  .infocards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+    grid-gap: 2rem;
+    //margin: 2rem;
+  }
+
+  .card_item {
+    height: 215px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  h3 {
+    color: white;
+    font-size: 24px;
+    margin: 20px 0 0 20px;
+    position: relative;
+  }
+
+  p {
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    align-self: end;
+    margin: 0 0 20px 20px;
+    letter-spacing: 0.5px;
+    position: relative;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    height: 110%;
+    width: 100%;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .card_item:hover {
+    transform: scale(1.035, 1.035);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .card_item:hover img {
+    transform: translateY(-10px);
+  }
+
+  // cards 2
+
+  .text {
+    color: rgba(31, 181, 172, 0.9);
+    text-align: center;
+  }
+  .folded-corner:hover .text {
+    visibility: visible;
+    color: #000000;
+  }
+  .Services-tab {
+    margin-top: 20px;
+    max-width: 100%;
+  }
+  .folded-corner {
+    padding: 25px 25px;
+    position: relative;
+    font-size: 90%;
+    text-decoration: none;
+    color: #999;
+    background: transparent;
+    transition: all ease 0.5s;
+    border: 1px solid #19b5ff;
+  }
+  .folded-corner:hover {
+    background-color: rgba(31, 181, 172, 0.9);
+    border: 1px solid rgba(31, 181, 172, 0.9);
+  }
+  .folded-corner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-style: solid;
+    border-width: 0 0px 0px 0;
+    border-color: #ddd #000;
+    transition: all ease 0.3s;
+  }
+  .folded-corner:hover:before {
+    background-color: #d00003;
+    border-width: 0 50px 50px 0;
+    border-color: #eee #19b5ff;
+  }
+  .service_tab_1 {
+    background-color: #19b5ff;
+  }
+  .service_tab_1:hover .fa-icon-image {
+    color: #fff;
+    transform: rotate(360deg) scale(1.5);
+  }
+  .fa-icon-image {
+    color: #fff;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size-adjust: none;
+    font-stretch: normal;
+    -moz-font-feature-settings: normal;
+    -moz-font-language-override: normal;
+    text-rendering: auto;
+    transition: all 0.65s linear 0s;
+    text-align: center;
+    transition: all 1s cubic-bezier(0.99, 0.82, 0.11, 1.41);
+  }
+}

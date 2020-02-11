@@ -1,0 +1,32 @@
+#ofertas {
+  
+  .promocao:hover {
+    box-shadow: 1px 5px 15px $primary;
+  }
+  .promocao {
+    box-shadow: 1px 5px 15px #ccc;
+    width: 15em;
+    height: auto;
+    border-radius: 3px;
+    padding: 2em;
+    margin: 1em;
+    overflow: hidden;
+    position: relative;
+    flex: auto;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .name {
+    font-size: 18px;
+    min-height: 48px;
+  }
+  .price {
+    font-size: 16px;
+    text-decoration: line-through;
+    color: red;
+  }
+  .disc-price {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

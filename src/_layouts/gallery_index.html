@@ -1,0 +1,54 @@
+---
+layout: page
+---
+<style TYPE="text/css">
+/*.gallery {
+  width: 35em;
+  text-align: center;
+  padding: 1em 0 4em 0;
+}*/
+.galerias{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+}
+.galeria{
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 20px;
+}
+.galeria h3{
+font-size: 18px;
+margin-top: 5px;
+}
+.galeriaimg{
+  max-height: 232px;
+}
+.galeria a{
+  color: #000;
+}
+
+</style>
+<section class="page">
+  <div class="container">
+      <header>
+          <h1 class="page-title">Galeria de Fotos</h1>
+          <h2 class="page-subtitle">Exibição de fotos</h2>
+      </header>
+    <div class="row">
+      <div class="galerias">
+        {% for gallery in page.galleries %}
+      <div class="galeria col-md-4">
+        <a href="{{ gallery['gallery'] }}">
+        <img class="galeriaimg" src="{{ gallery['gallery'] }}/thumbs/{{ gallery['best_image'] }}">
+        </a>
+        <h3><a href="{{ gallery['gallery'] }}">{{ gallery["name"] }}</a></h3>
+        {{ gallery["images"] | size }} foto{% if gallery["images"].size != 1 %}s{% endif %}
+      </div>
+      {% endfor %} 
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,160 @@
+#slide {
+}
+.carousel {
+  position: relative;
+
+  &.fade {
+    opacity: 1;
+
+    .carousel-inner {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      .banner1 { background-image: url('../img/banners/desktop/banner1.jpg') }
+      .banner2 { background-image: url('../img/banners/desktop/banner2.jpg') }
+      .banner3 { background-image: url('../img/banners/desktop/banner3.jpg') }
+      @media (max-width: 768px) and (orientation: portrait) {
+        height: 76vh;
+        .banner1 { background-image: url('../img/banners/mobile/banner1.jpg') }
+        .banner2 { background-image: url('../img/banners/mobile/banner2.jpg') }
+        .banner3 { background-image: url('../img/banners/mobile/banner3.jpg') }
+      }
+    }
+
+    .item {
+      display: block !important;
+      position: absolute;
+      left: 0 !important;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: cover;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+
+      &.active {
+        z-index: 2;
+        opacity: 1;
+        transition: opacity 1.2s ease-in-out;
+      }
+      a {
+        display: block;
+        height: 100%;
+      }
+      .container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+
+  .carousel-text {
+    color: #fff;
+    display: block;
+    align-self: center;
+    padding: 50px 0;
+
+    .carousel-title {
+      text-transform: uppercase;
+      font-weight: bold;
+      margin: 0;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+      font-size: 20px;
+    }
+
+    .carousel-description {
+      font-size: 18px;
+      margin-top: 30px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .carousel-link {
+      margin-top: 50px;
+
+      .btn {
+        padding: 12px 30px;
+      }
+    }
+  }
+
+  .carousel-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: inline;
+    flex-flow: row nowrap;
+    z-index: 2;
+
+    .carousel-indicators {
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      .active {
+        background-color: transparent;
+      }
+
+      a {
+        display: block;
+        width: 14px;
+        height: 14px;
+        margin: 0 10px;
+        text-indent: -9999px;
+        background-color: transparent;
+        border: 1px solid #fff;
+        border-radius: 20px;
+
+        &:hover,
+        &:focus {
+          cursor: pointer;
+          opacity: 1;
+        }
+
+        &.active {
+          background-color: #fff;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .carousel-control-buttons {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 3;
+
+    .carousel-control-button {
+      position: absolute;
+      font-size: 40px;
+      text-align: center;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.15s;
+      opacity: 0.7;
+      line-height: 90px;
+      margin: 0 40px;
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// Non-relevant styles for section
+section.main {
+  padding: 100px 0;
+}
